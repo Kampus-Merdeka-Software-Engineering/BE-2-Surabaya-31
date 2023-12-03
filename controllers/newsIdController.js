@@ -1,4 +1,4 @@
-const newsIdModel = require('../services/newsIdService');
+const newsIdService = require('../services/newsIdService');
 
 async function getAllNewsId(req, res) {
   try {
