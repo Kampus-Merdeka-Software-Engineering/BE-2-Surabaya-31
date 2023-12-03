@@ -1,5 +1,5 @@
-const { PrismaCliIdt } = require('@prisma/cliIdt');
-const prisma = new PrismaCliIdt();
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
 async function getAllNewsId() {
   try {
