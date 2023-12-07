@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const cwuRouter = require('./routes/cwuRoute');
 const feedbackRouter = require('./routes/feedbackRoute');
 const newsEnRouter = require('./routes/newsEnRoute');
@@ -11,9 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); // Middleware untuk mengurai JSON body
 
 // Routes
 app.use('/cwu', cwuRouter);
