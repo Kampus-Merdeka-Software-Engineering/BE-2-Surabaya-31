@@ -3,9 +3,9 @@ const newsIdService = require('../services/newsIdService');
 async function getAllNewsId(req, res) {
   try {
     const newsId = await newsIdService.getAllNewsId();
-    res.json(newsId);
+    return newsId
   } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
+    throw error
   }
 }
 

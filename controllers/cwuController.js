@@ -1,11 +1,11 @@
 const cwuService = require('../services/cwuService');
 
-async function getAllcwu(req, res) {
+async function getAllcwu() {
   try {
     const cwu = await cwuService.getAllcwu();
-    res.json(cwu);
+    return cwu;
   } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
+    throw error;
   }
 }
 
