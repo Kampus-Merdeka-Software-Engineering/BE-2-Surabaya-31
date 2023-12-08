@@ -7,10 +7,15 @@ async function getAllcwu() {
     return cwu;
   } catch (error) {
     throw error;
+  } finally {
+    await prisma.$disconnect();
   }
 }
 
 async function createcwu(title, description, linkVideo) {
+  if (!title || !description || !linkVideo) {
+    throw new Error('Semua kolom harus diisi.');
+  }
   try {
     const cwu = await prisma.cwu.create({
       data: {
