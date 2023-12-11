@@ -1,11 +1,11 @@
 const newsIdService = require('../services/newsIdService');
 
-async function getAllNewsId(req, res) {
+async function getAllNewsId() {
   try {
     const newsId = await newsIdService.getAllNewsId();
-    return newsId
+    return newsId;
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 

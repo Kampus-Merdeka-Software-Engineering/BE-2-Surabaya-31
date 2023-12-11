@@ -3,7 +3,7 @@ const router = express.Router();
 const newsEnController = require('../controllers/newsEnController');
 
 // GET all newsEn
-router.get('/', async (req, res) => {
+router.get('/newsEn', async (req, res) => {
   try {
     const result = await newsEnController.getAllNewsEn();
 

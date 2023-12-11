@@ -13,10 +13,10 @@ app.use(cors());
 app.use(express.json()); // Middleware untuk mengurai JSON body
 
 // Routes
-app.use('/cwu', cwuRouter);
-app.use('/feedback', feedbackRouter);
-app.use('/newsEn', newsEnRouter);
-app.use('/newsId', newsIdRouter);
+app.use(cwuRouter);
+app.use(feedbackRouter);
+app.use(newsEnRouter);
+app.use(newsIdRouter);
 
 // Start server
 app.listen(PORT, () => {

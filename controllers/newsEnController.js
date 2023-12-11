@@ -1,6 +1,6 @@
 const newsEnModel = require('../services/newsEnService');
 
-async function getAllNewsEn(req, res) {
+async function getAllNewsEn() {
   try {
     const newsEn = await newsEnModel.getAllNewsEn();
 		return newsEn

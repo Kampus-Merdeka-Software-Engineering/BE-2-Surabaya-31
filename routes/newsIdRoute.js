@@ -3,7 +3,7 @@ const router = express.Router();
 const newsIdController = require('../controllers/newsIdController');
 
 // GET all newsId
-router.get('/', async (req, res) => {
+router.get('/newsId', async (req, res) => {
   try {
     const result = await newsIdController.getAllNewsId();
 
