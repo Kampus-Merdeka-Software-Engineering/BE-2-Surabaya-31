@@ -7,20 +7,24 @@ async function getAllNewsEn() {
     return newsEn;
   } catch (error) {
     throw error;
+  } finally {
+    await prisma.$disconnect();
   }
 }
 
-async function createNewsEn(title, description, linkBerita, linkImage) {
+async function createNewsEn(title, description, linkImage, linkBerita) {
+  if (!title || !description || !linkImage || !linkBerita) {
+    throw new Error('Semua kolom harus diisi.');
+  }
   try {
     const newsEn = await prisma.newsEn.create({
       data: {
         title,
         description,
-        linkBerita,
-        linkImage
+        linkImage,
+        linkBerita
       },
     });
-
 
     return newsEn;
   } catch (error) {
